@@ -26,8 +26,14 @@ function paintToDo(text) {
    const deleteButton = document.createElement("button");
    const span = document.createElement("span");
    const newId = toDos.length + 1;
-   deleteButton.innerText = "x";
+
+   deleteButton.innerText = "✅";
+   deleteButton.style.cursor = "pointer";
+   deleteButton.style.fontSize = "20px";
    deleteButton.addEventListener("click", deleteToDo);
+   deleteButton.style.marginLeft = "20px";
+   deleteButton.style.backgroundColor = "transparent";
+   deleteButton.style.border = "none";
    span.innerText = text;
 
    li.appendChild(span);
@@ -47,7 +53,7 @@ function submitHandler(event) {
    event.preventDefault();
    const currentValue = toDoInput.value;
    paintToDo(currentValue);
-   toDoInput.value = " ";
+   toDoInput.value = "";
 }
 
 function loadToDos() {
@@ -60,7 +66,13 @@ function loadToDos() {
    }
 }
 
+function toDoListStyle() {
+   toDoList.style.color = "white";
+   toDoList.style.fontSize = "35px";
+}
+
 function init() {
+   toDoListStyle();
    loadToDos();
    toDoForm.addEventListener("submit", submitHandler);
 }

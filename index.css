@@ -1,5 +1,11 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
 body {
-   color: #34495e;
+   font-family: "Open Sans", sans-serif;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .clicked {
@@ -9,6 +15,33 @@ body {
 .form,
 .greetings {
    display: none;
+}
+
+input {
+   border: none;
+   border-bottom: 2px solid white;
+}
+
+input::placeholder {
+   color: white;
+   text-align: center;
+}
+
+.ask-name {
+   background-color: transparent;
+   font-size: 50px;
+   margin-bottom: 30px;
+}
+
+.to-do {
+   background-color: transparent;
+   font-size: 40px;
+}
+
+.ask-name:focus,
+.to-do:focus {
+   outline: none;
+   color: white;
 }
 
 .showing {
@@ -32,4 +65,11 @@ body {
    height: 100%;
    z-index: -1;
    animation: fadeIn 0.5s linear;
+}
+
+.js-weather {
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   color: white;
 }

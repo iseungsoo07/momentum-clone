@@ -36,7 +36,14 @@ function loadName() {
    }
 }
 
+function greetingStyle() {
+   greeting.style.color = "white";
+   greeting.style.fontSize = "50px";
+   greeting.style.marginBottom = "30px";
+}
+
 function init() {
+   greetingStyle();
    loadName();
 }
 
